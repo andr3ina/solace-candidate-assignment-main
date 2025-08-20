@@ -67,7 +67,6 @@ export default function Home() {
       cacheRef.current.set(key, data);
       setRows(data);
     } catch (e: unknown) {
-      if ((e as any)?.name === "AbortError") return;
       setError(AppErrorTypes(e));
     } finally {
       setLoading(false);
